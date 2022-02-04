@@ -4,22 +4,26 @@
 
   <form>
     <div class="img">
-      <input type="radio">
+      <input type="radio" id="hombre" name="sexo" value="H">
       <img src="../../assets/barba.png">
       <img src="../../assets/mujer-de-negocios.png">
-      <input type="radio">
+      <input type="radio" id="mujer" name="sexo" value="M">
     </div>
-
-    <div class="btn">
+    <div class="datos">
       <div>
-        <label>Altura: <input type="number"></label>
+        <button (click)="sumar()">-</button>
+        <input type="text" value="110" id="altura">
+        <button>cm</button>
+        <button>+</button>
       </div>
       <br>
       <div>
-        <label>Peso: <input type="number"></label>
+        <button>-</button>
+        <input type="text" value="50" id="peso">
+        <button>kg</button>
+        <button>+</button>
       </div>
     </div>
-
     <div class="check">
       <button>Cancelar</button>
       <button>Aceptar</button>
