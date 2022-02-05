@@ -15,12 +15,14 @@ h2 {
 }
 
 .img {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.img img{
   width: 6rem;
   height: 6rem;
-  display: flex;
-  align-content: center;
-  margin-left: 30%;
-  margin-top: 5rem;
 }
 
 img:hover {
@@ -32,7 +34,7 @@ button:hover {
 }
 
 .datos {
-  margin-top: 5rem;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,3 +51,8 @@ button:hover {
   justify-content: space-evenly;
 }
 
+.IMC {
+  float: left;
+  margin-left: 5rem;
+  margin-top: 3rem;
+}

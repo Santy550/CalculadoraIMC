@@ -9,20 +9,39 @@ export class CalculadoraComponent implements OnInit {
 
   calculadora = 'NOMBRE';
 
-  /*operandoA:number;
-  operandoB:number;
-  resultado:number;
+  public altura?:number;
+  public peso?:number;
+  public imc?:number;
 
-  onSumar():void {
-    this.resultado = this.operandoA + this.operandoB;
-  }*/
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  public sumar():void {
+  public restarAltura(): void {
+    // @ts-ignore
+    this.altura = --this.altura;
+  }
 
+  public sumarAltura(): void {
+    // @ts-ignore
+    this.altura = ++this.altura;
+  }
+
+  public restarPeso(): void {
+    // @ts-ignore
+    this.peso = --this.peso;
+  }
+  public sumarPeso(): void {
+    // @ts-ignore
+    this.peso = ++this.peso;
+  }
+
+  public calcularIMC(): void {
+    // @ts-ignore
+    this.imc =  this.peso / ((this.altura / 100) * (this.altura / 100));
+    console.log(this.imc);
   }
 
 }
