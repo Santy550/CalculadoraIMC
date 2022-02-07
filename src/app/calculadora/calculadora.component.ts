@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NgSwitch} from "@angular/common";
 
 @Component({
   selector: 'app-calculadora',
@@ -9,39 +10,61 @@ export class CalculadoraComponent implements OnInit {
 
   calculadora = 'NOMBRE';
 
-  public altura?:number;
-  public peso?:number;
-  public imc?:number;
+  altura: number = 110;
+  peso: number = 50;
+  imc: number = 0;
+  texto: string = " ";
+  estadoSalud: string = " ";
+  flaco: string = "Flaco";
+  normal: string = "Normal";
+  obeso: string = "Obeso";
+  sobrepeso: string = "Sobrepeso";
+
 
   constructor() {
+
   }
 
   ngOnInit(): void {
   }
 
   public restarAltura(): void {
-    // @ts-ignore
     this.altura = --this.altura;
   }
 
   public sumarAltura(): void {
-    // @ts-ignore
     this.altura = ++this.altura;
   }
 
   public restarPeso(): void {
-    // @ts-ignore
     this.peso = --this.peso;
   }
+
   public sumarPeso(): void {
-    // @ts-ignore
     this.peso = ++this.peso;
   }
 
   public calcularIMC(): void {
-    // @ts-ignore
-    this.imc =  this.peso / ((this.altura / 100) * (this.altura / 100));
-    console.log(this.imc);
+    this.imc = this.peso / ((this.altura / 100) * (this.altura / 100));
   }
+
+  public text(): void {
+
+    if (this.imc > 0 && this.imc < 18.5 ) {
+      this.estadoSalud = this.flaco;
+    }else if (this.imc > 18.5 && this.imc < 24.9) {
+      this.estadoSalud = this.normal;
+    }else if (this.imc > 25 && this.imc < 29.9){
+      this.estadoSalud = this.obeso;
+    }else if (this.imc > 30){
+      this.estadoSalud = this.sobrepeso;
+    }else {
+      "No se permiten valores menores que 0"
+    }
+
+    this.texto = this.estadoSalud;
+
+  }
+
 
 }

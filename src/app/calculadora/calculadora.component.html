@@ -1,9 +1,13 @@
-<div class="IMC">
-  <label for="IMC">Tu IMC es: </label>
-  <input type="text" id="IMC" name="IMC" [(ngModel)]="imc">
-</div>
-
 <body>
+<div class="res">
+  <div class="IMC">
+    <label for="IMC">Tu IMC es: </label>
+    <input type="text" id="IMC" name="IMC" [(ngModel)]="imc">
+  </div>
+  <div class="texto">
+    <input type="text" id="texto" name="texto" [(ngModel)]="texto" *ngIf="imc"/>
+  </div>
+</div>
 
 <form>
   <h2>{{calculadora}}</h2>
@@ -18,7 +22,7 @@
 
     <div>
       <button (click)="restarAltura()">-</button>
-      <input type="text" placeholder="110" class="form-control" value="110" id="altura" name="altura" [(ngModel)]="altura" />
+      <input type="text" class="form-control" value="110" id="altura" name="altura" [(ngModel)]="altura" />
       <button>cm</button>
       <button (click)="sumarAltura()">+</button>
     </div>
@@ -27,7 +31,7 @@
 
     <div>
       <button (click)="restarPeso()">-</button>
-      <input type="text" placeholder="50" class="form-control" value="50" id="peso" name="peso" [(ngModel)]="peso" />
+      <input type="text" class="form-control" value="50" id="peso" name="peso" [(ngModel)]="peso" />
       <button>kg</button>
       <button (click)="sumarPeso()">+</button>
     </div>
@@ -35,7 +39,7 @@
   </div>
   <div class="check">
     <button type="reset" value="borrar">Borrar</button>
-    <button (click)="calcularIMC()">Calcular</button>
+    <button (click)="calcularIMC()" (click)="text()">Calcular</button>
   </div>
 
 </form>
