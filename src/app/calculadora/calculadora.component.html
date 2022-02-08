@@ -4,14 +4,14 @@
     <label for="IMC">Tu IMC es: </label>
     <input type="text" id="IMC" name="IMC" [(ngModel)]="imc">
   </div>
-  <div class="texto">
-    <input type="text" id="texto" name="texto" [(ngModel)]="estadoSalud" *ngIf="imc"/>
+  <div class="estadoSalud">
+    <input type="text" id="estadoSalud" name="estadoSalud" [(ngModel)]="estadoSalud"/>
   </div>
 </div>
 
 <form>
   <h2>{{calculadora}}</h2>
-  <input type="text" id="nombre" placeholder="Escriba su nombre..." [(ngModel)]="nombre">
+  <input type="text" placeholder="Escriba su nombre..." id="nombre" name="nombre" [(ngModel)]="nombre">
 
   <div class="img">
     <input type="radio" id="sexoH" name="sexo" value="sexoH">
@@ -24,7 +24,7 @@
 
     <div>
       <button (click)="restarAltura()">-</button>
-      <input type="text" class="form-control" id="altura" name="altura" [(ngModel)]="altura" />
+      <input type="text" class="form-control" id="altura" name="altura" [(ngModel)]="altura"/>
       <button>cm</button>
       <button (click)="sumarAltura()">+</button>
     </div>
@@ -33,7 +33,7 @@
 
     <div>
       <button (click)="restarPeso()">-</button>
-      <input type="text" class="form-control" id="peso" name="peso" [(ngModel)]="peso" />
+      <input type="text" class="form-control" id="peso" name="peso" [(ngModel)]="peso"/>
       <button>kg</button>
       <button (click)="sumarPeso()">+</button>
     </div>
@@ -41,7 +41,7 @@
   </div>
   <div class="check">
     <button type="reset" value="borrar">Borrar</button>
-    <button (click)="calcularIMC()" (click)="estado()" >Calcular</button>
+    <button (click)="calcularIMC()" (click)="estado()">Calcular</button>
   </div>
 
 </form>

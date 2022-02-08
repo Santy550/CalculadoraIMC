@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
+import {Call} from "@angular/compiler";
 
 @Component({
   selector: 'app-historial',
@@ -9,15 +10,14 @@ export class HistorialComponent implements OnInit {
 
   historia = 'Historial'
 
-  @Input() estadoSaulud: string = "";
+  @Input() nombre: string = " ";
+  @Input() estadoSalud: string = " ";
+  @Input() historial: string [] = [this.nombre, this.estadoSalud];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
   }
 
-  public mostrarHistorial(): string {
-    return this.estadoSaulud;
+  ngOnInit(): void {
   }
 
 

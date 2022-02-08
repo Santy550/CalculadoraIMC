@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {NgSwitch} from "@angular/common";
+import {Component, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-calculadora',
@@ -10,11 +9,11 @@ export class CalculadoraComponent implements OnInit {
 
   calculadora = 'NOMBRE';
 
-  nombre: string = " ";
+  @Output() nombre: string = " ";
   altura: number = 110;
   peso: number = 50;
   imc: number = 0;
-  estadoSalud: string = " ";
+  @Output() estadoSalud: string = " ";
   flaco: string = "Flaco";
   normal: string = "Normal";
   obeso: string = "Obeso";
@@ -48,18 +47,17 @@ export class CalculadoraComponent implements OnInit {
 
   public estado(): void {
 
-    if (this.imc >= 0 && this.imc < 18.5 ) {
+    if (this.imc >= 0 && this.imc < 18.5) {
       this.estadoSalud = this.flaco;
-    }else if (this.imc >= 18.5 && this.imc < 24.9) {
+    } else if (this.imc >= 18.5 && this.imc < 24.9) {
       this.estadoSalud = this.normal;
-    }else if (this.imc >= 25 && this.imc < 29.9){
+    } else if (this.imc >= 25 && this.imc < 29.9) {
       this.estadoSalud = this.obeso;
-    }else if (this.imc >= 30){
+    } else if (this.imc >= 30) {
       this.estadoSalud = this.sobrepeso;
-    }else {
+    } else {
       this.estadoSalud = "No se permiten valores menores que 0";
     }
-
 
   }
 
