@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-historial',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistorialComponent implements OnInit {
 
+  historia = 'Historial'
+
+  @Input() estadoSaulud: string = "";
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  public mostrarHistorial(): string {
+    return this.estadoSaulud;
+  }
+
 
 }
