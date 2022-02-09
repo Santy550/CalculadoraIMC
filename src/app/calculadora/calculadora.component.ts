@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-calculadora',
@@ -9,11 +9,15 @@ export class CalculadoraComponent implements OnInit {
 
   calculadora = 'NOMBRE';
 
-  @Output() nombre: string = " ";
+  historial: string[] = [];
+  @Output() historico = new EventEmitter<string[]>();
+
+  nombre: string = " ";
+  estadoSalud: string = " ";
   altura: number = 110;
   peso: number = 50;
   imc: number = 0;
-  @Output() estadoSalud: string = " ";
+
   flaco: string = "Flaco";
   normal: string = "Normal";
   obeso: string = "Obeso";
@@ -59,6 +63,11 @@ export class CalculadoraComponent implements OnInit {
       this.estadoSalud = "No se permiten valores menores que 0";
     }
 
+  }
+
+  public mostrarHistorial(): void {
+    this.historial.push(this.nombre + " - " + this.estadoSalud);
+    this.historico.emit(this.historial);
   }
 
 

@@ -1,12 +1,14 @@
 <div>
   <h2>{{historia}}</h2>
+
   <li
-    *ngFor="let estadoSalud of historial"
-    routerLink="/calculadora/{{ estadoSalud }}"
+    *ngFor="let historico of newHistorial"
   >
-    {{estadoSalud}}
+    {{historico}}
 
   </li>
+
+
 </div>
 
 

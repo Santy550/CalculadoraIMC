@@ -1,4 +1,4 @@
 <h1>{{ title }}</h1>
-<app-historial></app-historial>
-<app-calculadora></app-calculadora>
+<app-historial [newHistorial]="historico"></app-historial>
+<app-calculadora (historico)=onHistoricoNuevo($event)></app-calculadora>
 

@@ -5,5 +5,12 @@ div {
   width: 18%;
   margin-right: 3%;
   margin-top: 0%;
-  padding-bottom: 31.12rem;
+  padding-bottom: 20rem;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
