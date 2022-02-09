@@ -12,12 +12,6 @@ export class AppComponent {
   public estadoSalud: string = " ";
   public historico: string [] = [];
 
-  /*public mostrarHistorial(historico: string[] ): void {
-    console.log(historico);
-    this.historico = historico;
-
-  }*/
-
   public onHistoricoNuevo(eventData: any): void{
     console.log(eventData);
     this.historico = eventData;
